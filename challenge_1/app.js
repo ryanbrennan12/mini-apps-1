@@ -1,17 +1,30 @@
 ///create a div
 ///create a row
 ///render the row
-document.querySelectorAll('.cell')
-.forEach(e => e.addEventListener('click', () => {
-  console.log('clicked')
-}))
+
+// const cells = document.querySelectorAll('.cell')
+
+// cells.forEach(e => e.addEventListener('click', () => {
+  
+// }))
 
 
+const startGame = () => {
+  document.turn = 'x'
+}
 
+const nextMove = (cell) => {
+  cell.innerText = document.turn;
+  nextTurn();
 
+}
 
-// document.querySelectorAll('.cell')
-// .forEach(e => e.addEventListener("click", function() {
-//     // Here, `this` refers to the element the event was hooked on
-//     console.log("clicked")
-// }));
+const nextTurn = () => {
+  if (document.turn === 'x') {
+    document.turn = 'o'
+  } else {
+    document.turn = 'x'
+  }
+}
+
+startGame()
