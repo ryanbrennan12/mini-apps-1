@@ -3,32 +3,35 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="app.js"></script>
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Tic Tac Toe</title>
 </head>
 
-<body>
 
+<body id="game">
   <table>
     <tr>
-      <td>x</td>
-      <td>x</td>
-      <td>x</td>
+      <td class="cell" id="0"></td>
+      <td class="cell" id="2"></td>
+      <td class="cell" id="2"></td>
     </tr>
     <tr>
-      <td>x</td>
-      <td>x</td>
-      <td>x</td>
+      <td class="cell" id="3"></td>
+      <td class="cell" id="4"></td>
+      <td class="cell" id="5"></td>
     </tr>
     <tr>
-      <td>x</td>
-      <td>x</td>
-      <td>x</td>
+      <td class="cell" id="6"></td>
+      <td class="cell" id="7"></td>
+      <td class="cell" id="9"></td>
     </tr>
   </table>
+  <div class="gameover">
+    <div class="text"></div>
+  </div>
+  <button>Restart</button>
 
+  <script src="app.js"></script>
 </body>
 
 </html>

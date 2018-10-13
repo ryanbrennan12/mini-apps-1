@@ -1,1 +1,3 @@
-console.log('holla at yo boy')
+// let newDiv = document.createElement('div')
+let body = document.body
+
