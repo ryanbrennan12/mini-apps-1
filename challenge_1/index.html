@@ -5,29 +5,30 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
   <title>Tic Tac Toe</title>
+  <div id="message">Message</div>
 </head>
 
 
 <body id="game">
   <table id="mytable">
     <tr>
-      <td class="cell" onClick="nextMove(this)"></td>
-      <td class="cell" onClick="nextMove(this)"></td>
-      <td class="cell" onClick="nextMove(this)"></td>
-
-      <td class="cell" onClick="nextMove(this)"></td>
-      <td class="cell" onClick="nextMove(this)"></td>
-      <td class="cell" onClick="nextMove(this)"></td>
-  
-      <td class="cell" onClick="nextMove(this)"></td>
-      <td class="cell" onClick="nextMove(this)"></td>
-      <td class="cell" onClick="nextMove(this)"></td>
+      <td class="cell" id="0" onClick="nextMove(this)"></td>
+      <td class="cell" id="2" onClick="nextMove(this)"></td>
+      <td class="cell" id="2" onClick="nextMove(this)"></td>
+    </tr>
+      <td class="cell" id="3" onClick="nextMove(this)"></td>
+      <td class="cell" id="4" onClick="nextMove(this)"></td>
+      <td class="cell" id="5" onClick="nextMove(this)"></td>
+    </tr> 
+      <td class="cell" id="6" onClick="nextMove(this)"></td>
+      <td class="cell" id="7" onClick="nextMove(this)"></td>
+      <td class="cell" id="9" onClick="nextMove(this)"></td>
     </tr>
   </table>
   <div class="gameover">
     <div class="text"></div>
   </div>
-  <button>Restart</button>
+  <button id="btn" onClick="myFunction()">Restart</button>
 
   <script src="app.js"></script>
 </body>

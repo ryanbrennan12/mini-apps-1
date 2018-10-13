@@ -8,23 +8,41 @@
   
 // }))
 
+//set turn variable on doc
+
+
 
 const startGame = () => {
   document.turn = 'x'
+  message('Player ' + document.turn + ', it is your turn')
+}
+
+const message = (msg) => {
+  document.getElementById("message").innerText = msg
 }
 
 const nextMove = (cell) => {
   cell.innerText = document.turn;
-  nextTurn();
+  switchTurn();
 
 }
 
-const nextTurn = () => {
+const switchTurn = () => {
   if (document.turn === 'x') {
     document.turn = 'o'
+    message('Player ' + document.turn + ', it is your turn')
   } else {
     document.turn = 'x'
+    message('Player ' + document.turn + ', it is your turn')
   }
 }
+
+
+
+
+const myFunction = () => {
+  document.getElementByClassName("cell").innerHTML = "YOU CLICKED ME!";
+}
+
 
 startGame()
