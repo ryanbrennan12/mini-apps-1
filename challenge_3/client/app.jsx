@@ -54,11 +54,11 @@ class Form1 extends React.Component {
     return (
     <div>
           Name: 
-          <input type="text" value={this.state.name} onChange={this.handleChange('name')} />
+          <input value={this.state.name} onChange={this.handleChange('name')} />
           Email: 
-          <input type="email" value={this.state.email} onChange={this.handleChange('email')} />
+          <input value={this.state.email} onChange={this.handleChange('email')} />
           Password:
-          <input type="text" value={this.state.message} onChange={this.handleChange('message')} />
+          <input value={this.state.message} onChange={this.handleChange('message')} />
           <button onClick={() => this.props.onNext()}>Next</button>
        </div>
     );
