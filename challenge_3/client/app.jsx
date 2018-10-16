@@ -1,6 +1,6 @@
 class App extends React.Component {
   constructor() {
-    super() 
+    super()
     this.state = {
       step: 1,
       //form1
@@ -26,9 +26,9 @@ class App extends React.Component {
   //this will be triggered by Button in component
   // saving to the DB here as well
   nextStep() {
-    console.log('clicked')
-    const {step} = this.state.step;
-    if (step !==3) {
+
+    const step = this.state.step;
+    if (step !== 4) {
       this.setState({
         step: step + 1
       })
@@ -58,12 +58,32 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <Form1 handleChange={this.handleChange} nextStep={this.nextStep} />
-    )
+    switch (this.state.step) {
+      case 1:
+        return <Checkout handleChange={this.handleChange} nextStep={this.nextStep} />
+      case 2:
+        return <Form1 handleChange={this.handleChange} nextStep={this.nextStep} />
+      case 3:
+        return <Form2 handleChange={this.handleChange} nextStep={this.nextStep} />
+      case 4:
+        return <Form3 handleChange={this.handleChange} nextStep={this.nextStep} />  
+    }
   }
 }
 ///FORM 1
+
+
+class Checkout extends React.Component {
+  constructor() {
+    super()
+  }
+  render() {
+    return (
+      <button onClick={()=> this.props.nextStep()}>CHECKOUT SAN</button>
+    )
+  }
+}
+
 class Form1 extends React.Component {
   constructor() {
     super()
@@ -72,13 +92,13 @@ class Form1 extends React.Component {
   render() {
     return (
       <div>
-      Name:  
+        Name:
       <input onChange={this.props.handleChange('name')}></input>
-      Email: 
+        Email:
       <input onChange={this.props.handleChange('email')}></input>
-      Password: 
+        Password:
       <input onChange={this.props.handleChange('password')}></input>
-      <button onClick={()=> this.props.nextStep()}>Next</button>
+        <button onClick={() => this.props.nextStep()}>Next</button>
       </div>
     )
   }
@@ -91,41 +111,46 @@ class Form2 extends React.Component {
   render() {
     return (
       <div>
-      Address:  
+        Address:
       <input onChange={this.props.handleChange('addy1')}></input>
-      <input onChange={this.props.handleChange('addy2')}></input>
-      City: 
+        <input onChange={this.props.handleChange('addy2')}></input>
+        City:
       <input onChange={this.props.handleChange('city')}></input>
-      State: 
+        State:
       <input onChange={this.props.handleChange('state')}></input>
-      Zip: 
+        Zip:
       <input onChange={this.props.handleChange('zip')}></input>
-      Phone: 
+        Phone:
       <input onChange={this.props.handleChange('phone')}></input>
+        <button onClick={() => this.props.nextStep()}>Next</button>
       </div>
     )
   }
 }
-// class Form1 extends React.Component {
-//   constructor() {
-//     super()
-//   }
+class Form3 extends React.Component {
+  constructor() {
+    super()
+  }
 
-//   render() {
-//     return (
-//       <div>
-//       Credit Card Number:  
-//       <input onChange={this.props.handleChange('credit')}></input>
-//       Expiration Date: 
-//       <input onChange={this.props.handleChange('exp')}></input>
-//       CVV Number: 
-//       <input onChange={this.props.handleChange('cvv')}></input>
-//       Billing Zip: 
-//       <input onChange={this.props.handleChange('zip2')}></input>
-//       </div>
-//     )
-//   }
-// }
+  render() {
+    return (
+      <div>
+        Credit Card Number:
+      <input onChange={this.props.handleChange('credit')}></input>
+        Expiration Date
+      <input onChange={this.props.handleChange('exp')}></input>
+        CVV:
+      <input onChange={this.props.handleChange('cvv')}></input>
+        Biling Zip:
+      <input onChange={this.props.handleChange('zip2')}></input>
+      </div>
+    )
+  }
+}
+
+
+
+
 
 
 
