@@ -28,7 +28,7 @@ class App extends React.Component {
   nextStep() {
 
     const step = this.state.step;
-    if (step !== 4) {
+    if (step !== 5) {
       this.setState({
         step: step + 1
       })
@@ -68,6 +68,8 @@ class App extends React.Component {
         return <Form2 handleChange={this.handleChange} nextStep={this.nextStep} />
       case 4:
         return <Form3 handleChange={this.handleChange} nextStep={this.nextStep} />  
+      case 5:
+        return <Purchase /> 
     }
   }
 }
@@ -144,11 +146,25 @@ class Form3 extends React.Component {
       <input onChange={this.props.handleChange('cvv')}></input>
         Biling Zip:
       <input onChange={this.props.handleChange('zip2')}></input>
+      <button onClick={() => this.props.nextStep()}>Next</button>
       </div>
     )
   }
 }
+class Purchase extends React.Component {
+  constructor() {
+    super()
+  }
 
+  render() {
+    return (
+      <div>
+       <h1>Confirmation</h1>
+      <button>PURCHASE</button>
+      </div>
+    )
+  }
+}
 
 
 ReactDOM.render(<App />, document.getElementById('app'));
