@@ -32,8 +32,7 @@ class App extends React.Component {
       this.setState({
         step: step + 1
       })
-    } else {
-      //SAVE TO DB
+    
       const values = {
         name: this.state.name,
         email: this.state.email,
@@ -49,7 +48,9 @@ class App extends React.Component {
         cvv: this.state.cvv,
         zip2: this.state.zip2
       }
-
+      //SAVE TO DB
+      
+      
     }
   }
   //dont have to bind
@@ -150,13 +151,13 @@ class Form3 extends React.Component {
 
 
 
-
-
-
-
-
-
-
-
 ReactDOM.render(<App />, document.getElementById('app'));
+
+
+
+
+
+
+
+
 
