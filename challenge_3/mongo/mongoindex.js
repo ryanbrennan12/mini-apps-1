@@ -13,56 +13,56 @@ var db = mongoose.connection
 
 var formSchema = mongoose.Schema({
   name: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   email: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   password: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   addy1: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   addy2: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   city: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   state: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   zip: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   phone: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   credit: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   exp: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   cvv: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   },
   zip2: {
-    type: null,
-    required: true,
+    type: String,
+    // required: true,
   }
 })
     
@@ -87,7 +87,7 @@ const save = (item) => {
     zip2: item.zip2
   }).save()
   .then(() => {
-    conssole.log('successfully saved to DB')
+    console.log('successfully saved to DB')
   })
   .catch((err) => {
     console.log('Error in Saving to DB', err)
