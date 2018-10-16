@@ -6,8 +6,12 @@ const port = 3000;
 
 
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
+app.post('/save', (req, res) => {
+  console.log('the body has risen', req.body)
+})
 
 
 

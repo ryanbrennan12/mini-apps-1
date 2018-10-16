@@ -48,7 +48,14 @@ class App extends React.Component {
         cvv: this.state.cvv,
         zip2: this.state.zip2
       }
-      //SAVE TO DB
+      $.ajax({
+        type: 'POST',
+        url: '/save',
+        data: values,
+        datatype: 'json',
+      }).done((data) => {
+        console.log('returned data')
+      })
       
       
     }
