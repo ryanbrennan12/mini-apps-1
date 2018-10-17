@@ -14,6 +14,7 @@ var db = mongoose.connection
 var formSchema = mongoose.Schema({
   name: {
     type: String,
+    unique: true
     // required: true,
   },
   email: {
@@ -69,8 +70,9 @@ var formSchema = mongoose.Schema({
 const Form = mongoose.model('Form', formSchema)
 
 
+
+
 const save = (item) => {
-  console.log('THIS IS ITEM', item)
   new Form({
     name: item.name,
     email: item.email,
@@ -93,5 +95,30 @@ const save = (item) => {
     console.log('Error in Saving to DB', err)
   })
 }
+const update = (item) => {
+  console.log('UPDATE DATA', item)
+  const query = ({name: item.name})
+  Form.findOneAndUpdate(query, {
+    name: item.name,
+    email: item.email,
+    password: item.password,
+    addy1: item.addy1,
+    addy2: item.addy2,
+    city: item.city,
+    state: item.state,
+    zip: item.zip,
+    phone: item.phone,
+    credit: item.credit,
+    exp: item.exp,
+    cvv: item.cvv,
+    zip2: item.zip2
+}).then(() => {
+  console.log('UPDATED DB')
+})
+.catch((err) => {
+  console.log('ERROR IN SAVING', err)
+})
+}
 
 module.exports.save = save
+module.exports.update = update;

@@ -17,6 +17,7 @@ app.post('/save', (req, res) => {
 
 app.post('/update', (req, res) => {
   console.log('BODY ON UPDATE', req.body)
+  db.update(req.body)
   res.send('UPDATE WAS SENT')
 })
 
