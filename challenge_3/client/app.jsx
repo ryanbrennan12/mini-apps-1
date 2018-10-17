@@ -32,7 +32,6 @@ class App extends React.Component {
       this.setState({
         step: step + 1
       })
-    
       const values = {
         name: this.state.name,
         email: this.state.email,
@@ -48,18 +47,31 @@ class App extends React.Component {
         cvv: this.state.cvv,
         zip2: this.state.zip2
       }
-      $.ajax({
-        type: 'POST',
-        url: '/save',
-        data: values,
-        datatype: 'json',
-      }).done((data) => {
-        console.log('returned data')
-      })
-      
-      
+      if (step === 2) {
+        $.ajax({
+          type: 'POST',
+          url: '/save',
+          data: values,
+          datatype: 'json',
+        }).done((data) => {
+          ///saving HERE
+          console.log('POST on Save', data)
+        })
+      } else if ((step === 3) || (step === 4)) {
+        $.ajax({
+          type: 'POST',
+          url: '/update',
+          data: values,
+          datatype: 'json'
+        }).done((data) => {
+          console.log('POST on update', data)
+        })
+      }
     }
   }
+
+        
+      
   //dont have to bind
   handleChange(key) {
     return (e) => this.setState({ [key]: e.target.value })

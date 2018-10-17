@@ -11,12 +11,14 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.post('/save', (req, res) => {
-  console.log('the body has risen', req.body)
   db.save(req.body)
-  res.send('It was sent!')
+  res.send('SAVE WAS SENT!')
 })
 
-
+app.post('/update', (req, res) => {
+  console.log('BODY ON UPDATE', req.body)
+  res.send('UPDATE WAS SENT')
+})
 
 
 
