@@ -5,7 +5,9 @@ app.use(express.static('client'))
 
 const port = 3000;
 
-
+app.post("/transform", (req, res) => {
+  console.log('BODY BEB, ', req.body)
+})
 
 
 app.listen(port, () => {
