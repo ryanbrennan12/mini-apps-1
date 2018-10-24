@@ -1,12 +1,11 @@
 const express = require('express');
 const app = express();
 
+app.use(express.static('client'))
+
 const port = 3000;
 
 
-app.get('/', (req, res) => {
-  res.send('Hey hey here are some kind words!')
-})
 
 
 app.listen(port, () => {
