@@ -17,6 +17,7 @@ const port = 3000;
 
 app.post("/transform", (req, res) => {
   helpers.converter(req.body, (data) => {
+    console.log(Object.keys(data))
     res.send(data)
   })
 })
