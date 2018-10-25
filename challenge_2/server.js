@@ -1,5 +1,6 @@
 const express = require('express');
 var bodyParser = require('body-parser')
+const helpers = require('./helper')
 const app = express();
 
 
@@ -12,7 +13,9 @@ app.use(express.static('client'))
 const port = 3000;
 
 app.post("/transform", (req, res) => {
-  console.log(req.body)
+  helpers.converter(req.body, (data) => {
+    res.send(data)
+  })
 })
 
 
